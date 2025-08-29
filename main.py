@@ -1,9 +1,9 @@
-def update_task(task_id: int = None, new_name: str = None, task_list: list = []) -> None:
-    if new_name == None:
+def update_task(task_id: int = 0, new_name: str = '', task_list: list = []) -> None:
+    if new_name.isspace():
         print('O nome da tarefa não pode ser vazio')
         return
 
-    if task_id == None:
+    if task_id == 0:
         print('Id da tarefa não definido')
         return
     
