@@ -21,6 +21,9 @@ def adicionar_tarefa(nome,descricao)
 
 
 # -> Editar
-
-
-
+def atualizar_tarefa(nome,descricao):
+    con = conectar()
+    cur = con.cursor()
+    cur.execute("INSERT INTO tarefas (nome, descricao) VALUES (?, ?)", (nome, descricao))
+    con.commit()
+    con.close()
