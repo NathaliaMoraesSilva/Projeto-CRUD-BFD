@@ -7,11 +7,21 @@ def adicionar_tarefa(nome,descricao):
     con.commit()
     con.close()
 
-# -> Listar
+#  ->listar_tarefas
 
+def listar_tarefas():
+    con = conectar()
+    cur = con.cursor()
+    cur.execute("SELECT * FROM tarefas")
+    tarefas = cur.fetchall()
+    con.close()
 
-
-
+    if not tarefas:
+        print("Nenhuma tarefa encontrada.")
+        return []
+    else:
+        return tarefas
+   
 # -> Remover
 def remover_tarefa(id_tarefa):
     con = conectar()
