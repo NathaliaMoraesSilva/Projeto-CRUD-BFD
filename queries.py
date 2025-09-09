@@ -17,7 +17,6 @@ def listar_tarefas():
     con.close()
 
     if not tarefas:
-        print("Nenhuma tarefa encontrada.")
         return []
     else:
         return tarefas
@@ -26,8 +25,16 @@ def listar_tarefas():
 def remover_tarefa(id_tarefa):
     con = conectar()
     cur = con.cursor()
-    cur.execute("DELETE FROM tarefas WHERE id = ?", (id_tarefa,))
-    con.commit()
+    cur.execute("SELECT * FROM tarefas WHERE id = ?", (id_tarefa,))
+    tarefa = cur.fetchone()
+
+    if tarefa:
+        cur.execute("DELETE FROM tarefas WHERE id = ?", (id_tarefa,))
+        con.commit()
+        print(f"Tarefa {id_tarefa} deletada com sucesso!")
+    else:
+        print(f"Tarefa com ID {id_tarefa} não encontrada!")
+
     con.close()
 
 # -> Buscar id
@@ -35,14 +42,11 @@ def buscar_tarefa(id_tarefa):
     con = conectar()
     cur = con.cursor()
     cur.execute("SELECT id, nome, descricao FROM tarefas WHERE id = ?", (id_tarefa,))
-    con.commit()
+    tarefa = cur.fetchone()  
     con.close()
-    if id_tarefa is not None:
-        return id_tarefa
-    else:
-        return None
 
-
+    return tarefa
+    
 # -> Editar
 def editar_tarefa(nome_novo, descricao_nova, id):
     con = conectar()
