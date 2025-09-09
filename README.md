@@ -5,9 +5,11 @@
 
 Um sistema simples de gerenciamento de tarefas onde os usuários podem:
 - Criar novas tarefas ✅
-- Definir datas para conclusão 📅
-- Marcar como concluídas 🟢
+- Listar tarefas 📋
+- Deletar tarefas 🗑️
+- Buscar tarefas por id 🔍
 - Excluir tarefas ❌
+  
 
 ## 🚀 Funcionalidades
 - Cadastro de tarefas com título e data
@@ -17,7 +19,7 @@ Um sistema simples de gerenciamento de tarefas onde os usuários podem:
 
 ## 🛠️ Tecnologias utilizadas
 - **Python** (lógica do sistema)
-- **MySQL** (banco de dados para armazenar as tarefas)
+- **SQLServer** (banco de dados para armazenar as tarefas)
 
 ## 📂 Estrutura do Projeto
 1. Clone este repositório:
@@ -26,15 +28,10 @@ Um sistema simples de gerenciamento de tarefas onde os usuários podem:
 
 
 2. Acesse a pasta do projeto:
-    cd Projeto-CRUD-BFD
-3. Configure o banco de dados MySQL:
-    
-    CREATE DATABASE tarefas;
-    USE tarefas;
+   cd Projeto-CRUD-BFD
 
-    CREATE TABLE tarefa (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    titulo VARCHAR(255) NOT NULL,
-    data DATE,
-    status BOOLEAN DEFAULT FALSE
-);
+## Membros da Equipe 👥
+-Nathalia Moraes Silva 👩‍💻
+-João Silva 👨‍💻
+-Maria Oliveira 👩‍💻
+-Carlos Souza 👨‍💻
