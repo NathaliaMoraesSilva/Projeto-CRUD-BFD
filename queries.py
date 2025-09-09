@@ -1,6 +1,6 @@
 from db import conectar
 
-def adicionar_tarefa(nome,descricao)
+def adicionar_tarefa(nome,descricao):
     con = conectar()
     cur = con.cursor()
     cur.execute("INSERT INTO tarefas (nome, descricao) VALUES (?, ?)", (nome, descricao))
@@ -13,6 +13,12 @@ def adicionar_tarefa(nome,descricao)
 
 
 # -> Remover
+def remover_tarefa(id_tarefa):
+    con = conectar()
+    cur = con.cursor()
+    cur.execute("DELETE FROM tarefas WHERE id = ?," (id_tarefa))
+    con.commit()
+    con.close()
 
 
 
