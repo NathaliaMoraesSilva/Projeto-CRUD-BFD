@@ -31,7 +31,8 @@ Um sistema simples de gerenciamento de tarefas onde os usuários podem:
    cd Projeto-CRUD-BFD
 
 ## Membros da Equipe 👥
--Nathalia Moraes Silva 👩‍💻
--João Silva 👨‍💻
--Maria Oliveira 👩‍💻
--Carlos Souza 👨‍💻
+- Nathalia Moraes Silva 👩‍💻
+- Dayvson Araújo Ramos 👨‍💻
+- Vívian Cunha 👩‍💻
+- Samuel Ricardo 👨‍💻
+- Caio Magalhães 👨‍💻
