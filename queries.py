@@ -1,9 +1,10 @@
 from db import conectar
 
-def adicionar_tarefa(nome,descricao):
+
+def adicionar_tarefa(tarefa):
     con = conectar()
     cur = con.cursor()
-    cur.execute("INSERT INTO tarefas (nome, descricao) VALUES (?, ?)", (nome, descricao))
+    cur.execute("INSERT INTO tarefas (nome, descricao) VALUES (?, ?)", (tarefa.nome, tarefa.descricao))
     con.commit()
     con.close()
 

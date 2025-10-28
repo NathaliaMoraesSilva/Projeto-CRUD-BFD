@@ -1,5 +1,11 @@
 import queries as q
 
+class Tarefa():
+    def __init__(self, nome, descricao):
+        self.nome = nome
+        self.descricao = descricao
+
+
 def exibir_menu():
     print('\n--- TaskCRUD - Gerenciador de Tarefas ---')
     print('1. Nova tarefa (CREATE - C)')
@@ -18,7 +24,7 @@ def nova_tarefa():
         print("Nome ou descrição vazia!")
         return
     
-    q.adicionar_tarefa(nome, descricao)
+    q.adicionar_tarefa(Tarefa(nome, descricao))
     print("Tarefa adicionada com sucesso!")
 
 def apresentar_tarefas():
